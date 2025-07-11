@@ -1,0 +1,1064 @@
+mixed-port: 7890
+redir-port: 7892
+tproxy-port: 7893
+authentication: [""]
+allow-lan: true
+mode: Rule
+log-level: info
+ipv6: true
+external-controller: :9999
+external-ui: ui
+secret:
+tun: {enable: false}
+experimental: {ignore-resolve-fail: true, interface-name: en0}
+
+find-process-mode: "off"
+routing-mark: 7894
+dns:
+  enable: true
+  listen: :1053
+  use-hosts: true
+  ipv6: true
+  default-nameserver:
+    - 114.114.114.114
+    - 223.5.5.5
+  rebind: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.localdomain'
+    - '*.example'
+    - '*.invalid'
+    - '*.localhost'
+    - '*.test'
+    - '*.local'
+    - '*.home.arpa'
+    - 'time.*.com'
+    - 'time.*.gov'
+    - 'time.*.edu.cn'
+    - 'time.*.apple.com'
+    - 'time-ios.apple.com'
+    - 'time1.*.com'
+    - 'time2.*.com'
+    - 'time3.*.com'
+    - 'time4.*.com'
+    - 'time5.*.com'
+    - 'time6.*.com'
+    - 'time7.*.com'
+    - 'ntp.*.com'
+    - 'ntp1.*.com'
+    - 'ntp2.*.com'
+    - 'ntp3.*.com'
+    - 'ntp4.*.com'
+    - 'ntp5.*.com'
+    - 'ntp6.*.com'
+    - 'ntp7.*.com'
+    - '*.time.edu.cn'
+    - '*.ntp.org.cn'
+    - '+.pool.ntp.org'
+    - 'time1.cloud.tencent.com'
+    - 'music.163.com'
+    - '*.music.163.com'
+    - '*.126.net'
+    - 'musicapi.taihe.com'
+    - 'music.taihe.com'
+    - 'songsearch.kugou.com'
+    - 'trackercdn.kugou.com'
+    - '*.kuwo.cn'
+    - 'api-jooxtt.sanook.com'
+    - 'api.joox.com'
+    - 'joox.com'
+    - 'y.qq.com'
+    - '*.y.qq.com'
+    - 'streamoc.music.tc.qq.com'
+    - 'mobileoc.music.tc.qq.com'
+    - 'isure.stream.qqmusic.qq.com'
+    - 'dl.stream.qqmusic.qq.com'
+    - 'aqqmusic.tc.qq.com'
+    - 'amobile.music.tc.qq.com'
+    - '*.xiami.com'
+    - '*.music.migu.cn'
+    - 'music.migu.cn'
+    - '+.msftconnecttest.com'
+    - '+.msftncsi.com'
+    - 'localhost.ptlogin2.qq.com'
+    - 'localhost.sec.qq.com'
+    - '+.qq.com'
+    - '+.tencent.com'
+    - '+.steamcontent.com'
+    - '+.srv.nintendo.net'
+    - '*.n.n.srv.nintendo.net'
+    - '+.cdn.nintendo.net'
+    - '+.stun.playstation.net'
+    - 'xbox.*.*.microsoft.com'
+    - '*.*.xboxlive.com'
+    - 'xbox.*.microsoft.com'
+    - 'xnotify.xboxlive.com'
+    - '+.battlenet.com.cn'
+    - '+.wotgame.cn'
+    - '+.wggames.cn'
+    - '+.wowsgame.cn'
+    - '+.wargaming.net'
+    - 'proxy.golang.org'
+    - 'stun.*.*'
+    - 'stun.*.*.*'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - '+.stun.*.*.*.*'
+    - '+.stun.*.*.*.*.*'
+    - 'heartbeat.belkin.com'
+    - '*.linksys.com'
+    - '*.linksyssmartwifi.com'
+    - '*.router.asus.com'
+    - 'mesu.apple.com'
+    - 'swscan.apple.com'
+    - 'swquery.apple.com'
+    - 'swdownload.apple.com'
+    - 'swcdn.apple.com'
+    - 'swdist.apple.com'
+    - 'lens.l.google.com'
+    - 'stun.l.google.com'
+    - 'na.b.g-tun.com'
+    - '+.nflxvideo.net'
+    - '*.square-enix.com'
+    - '*.finalfantasyxiv.com'
+    - '*.ffxiv.com'
+    - '*.ff14.sdo.com'
+    - 'ff.dorado.sdo.com'
+    - '*.mcdn.bilivideo.cn'
+    - '+.media.dssott.com'
+    - 'shark007.net'
+    - '+.market.xiaomi.com'
+    - '+.cmbchina.com'
+    - '+.cmbimg.com'
+    - 'adguardteam.github.io'
+    - 'adrules.top'
+    - 'anti-ad.net'
+    - 'local.adguard.org'
+    - 'static.adtidy.org'
+    - '+.sandai.net'
+    - '+.n0808.com'
+    - '+.3gppnetwork.org'
+    - '+.uu.163.com'
+    - 'ps.res.netease.com'
+    - '+.oray.com'
+    - '+.orayimg.com'
+  nameserver: [https://223.5.5.5/dns-query, https://doh.pub/dns-query, tls://dns.rubyfish.cn:853]
+  fallback: [https://1.0.0.1/dns-query, https://8.8.4.4/dns-query, https://doh.opendns.com/dns-query]
+  fallback-filter:
+    geoip: true
+    domain:
+      - '+.bing.com'
+      - '+.linkedin.com'
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+    proxies:
+      - ♻️ 自动选择
+      - 🛠️ 手动切换
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: 🛠️ 手动切换
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+    proxies:
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: 📲 电报消息
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+      - 🎯 全球直连
+  - name: 📹 油管视频
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+      - 🎯 全球直连
+  - name: 🎥 奈飞视频
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    filter: '新加坡|新|坡|(?i)Singapore|SG|狮|香港|港|(?i)Hong'
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: 🎥 Disney
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    filter: '新加坡|新|坡|(?i)Singapore|SG|狮|香港|港|(?i)Hong'
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: 📺 巴哈姆特
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🇹🇼 台湾节点
+      - ♾️ 🇹🇼台湾故转
+  - name: 📺 哔哩哔哩
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+  - name: 🤖 OpenAi
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: 🌍 国际媒体
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+      - 🎯 全球直连
+  - name: 💱 虚拟货币
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+    proxies:
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🛠️ 手动切换
+      - 🚀 节点选择
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: Ⓜ️ 微软服务
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: 🍎 苹果服务
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: 🎮 游戏平台
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🎯 全球直连
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - ♾️ 🇭🇰香港故转
+      - ♾️ 🇸🇬狮城故转
+      - ♾️ 🇯🇵日本故转
+      - ♾️ 🇹🇼台湾故转
+      - ♾️ 🇺🇸美国故转
+  - name: 🆎 广告拦截
+    type: select
+    proxies:
+      - 📵 拒绝连接
+      - 🎯 全球直连
+  - name: 🛠️ Speedtest测速
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+    proxies:
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🛠️ 手动切换
+      - 🚀 节点选择
+  - name: 🐟 漏网之鱼
+    type: select
+    url: https://captive.apple.com/generate_204
+    interval: 300
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 节点选择
+      - 🛠️ 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🇰🇷 韩国节点
+      - 🚧 ↔故障转移
+      - 🎯 全球直连
+  - name: ♻️ 自动选择
+    type: url-test
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Speedtest.png
+    url: https://captive.apple.com/generate_204
+    interval: 60  # 健康检查的时间间隔，单位为秒，每 60 秒（即 1 分钟）进行一次健康检查
+    tolerance: 50  # 节点切换的延迟容忍值，单位为毫秒。节点切换时，如果目标节点的延迟在当前节点的延迟±2000毫秒范围内，视为可切换
+    timeout: 2000   # 健康检查的超时时间，单位为毫秒。如果健康检查在 5000 毫秒内没有 响应，将视为失败
+    max-failed-times: 3  # 最大失败次数，超过 3 次失败时，将触发强制健康检查
+    # disable-udp: true  # 禁用 UDP 流量，表示此策略组不处理 UDP 请求，仅适用于 TCP  流量
+    #expected-status: 204  # 健康检查期望的 HTTP 状态码，设置为204，表示如果返回204，则节点认为健康
+    lazy: false # 懒惰状态设置为 false，表示在未选择该策略组时，依然会进行健康检查，
+    hidden: true
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+  - name: 🇭🇰 香港节点
+    type: url-test
+    filter: 'HK|香港|港|(?i)Hong'
+    url: https://captive.apple.com/generate_204
+    interval: 60
+    tolerance: 50
+    timeout: 2000
+    max-failed-times: 3
+    # disable-udp: true
+    #expected-status: 204
+    hidden: true
+    lazy: false
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+  - name: 🇸🇬 狮城节点
+    type: url-test
+    filter: '新加坡|新|坡|(?i)Singapore|SG|狮'
+    url: https://captive.apple.com/generate_204
+    interval: 60
+    tolerance: 50
+    timeout: 2000
+    max-failed-times: 3
+    # disable-udp: true
+    #expected-status: 204
+    hidden: true
+    lazy: false
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+  - name: 🇯🇵 日本节点
+    type: url-test
+    filter: 'JP|日本|东京|(?i)Japan'
+    url: https://captive.apple.com/generate_204
+    interval: 60
+    tolerance: 50
+    timeout: 2000
+    max-failed-times: 3
+    # disable-udp: true
+    #expected-status: 204
+    hidden: true
+    lazy: false
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+  - name: 🇹🇼 台湾节点
+    type: url-test
+    filter: '台|湾|TW|(?i)Taiwan'
+    url: https://captive.apple.com/generate_204
+    interval: 60
+    tolerance: 50
+    timeout: 2000
+    max-failed-times: 3
+    # disable-udp: true
+    #expected-status: 204
+    hidden: true
+    lazy: false
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+  - name: 🇺🇸 美国节点
+    type: url-test
+    filter: '美|US|(?i)States|American|United'
+    url: https://captive.apple.com/generate_204
+    interval: 60
+    tolerance: 50
+    timeout: 2000
+    max-failed-times: 3
+    # disable-udp: true
+    #expected-status: 204
+    hidden: true
+    lazy: false
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    filter: '韩|KR|(?i)Korea|KOR|首尔|韓|汉城|South'
+    url: https://captive.apple.com/generate_204
+    interval: 60
+    tolerance: 50
+    timeout: 2000
+    max-failed-times: 3
+    # disable-udp: true
+    #expected-status: 204
+    hidden: true
+    lazy: false
+    use:
+      - 满鑫欢喜
+      - 鑫满意足
+      - 连本带西
+  - name: "♾️ 🇭🇰香港故转"
+    type: fallback
+    interval: 60
+    lazy: true
+    url: https://captive.apple.com/generate_204
+    disable-udp: false
+    timeout: 2000
+    max-failed-times: 3
+    hidden: true
+    include-all: true
+    filter: "(?=.*(港|🇭🇰|HK|(?i)Hong))^((?!(台|日|韩|新|美|流量)).)*$"
+  - name: "♾️ 🇸🇬狮城故转"
+    type: fallback
+    interval: 60
+    lazy: true
+    url: https://captive.apple.com/generate_204
+    disable-udp: false
+    timeout: 2000
+    max-failed-times: 3
+    hidden: true
+    include-all: true
+    filter: "(?=.*(新|🇸🇬|SG|坡|狮城|(?i)Singapore))^((?!(港|日|台|韩|美|流量)).)*$"
+  - name: "♾️ 🇯🇵日本故转"
+    type: fallback
+    interval: 60
+    lazy: true
+    url: https://captive.apple.com/generate_204
+    disable-udp: false
+    timeout: 2000
+    max-failed-times: 3
+    hidden: true
+    include-all: true
+    filter: "(?=.*(日|🇯🇵|JP|东京|(?i)Japan))^((?!(港|台|韩|新|美|尼|流量)).)*$"
+  - name: "♾️ 🇹🇼台湾故转"
+    type: fallback
+    interval: 60
+    lazy: true
+    url: https://captive.apple.com/generate_204
+    disable-udp: false
+    timeout: 2000
+    max-failed-times: 3
+    hidden: true
+    include-all: true
+    filter: "(?=.*(台|🇹🇼|TW|湾|(?i)Taiwan))^((?!(港|日|韩|新|美|流量)).)*$"
+  - name: "♾️ 🇺🇸美国故转"
+    type: fallback
+    interval: 60
+    lazy: true
+    url: https://captive.apple.com/generate_204
+    disable-udp: false
+    timeout: 2000
+    max-failed-times: 3
+    hidden: true
+    include-all: true
+    filter: "(?=.*(美|US|🇺🇸|(?i)States|American))^((?!(港|台|日|韩|新|流量)).)*$"
+  - name: "🚧 ↔故障转移"
+    type: fallback
+    interval: 60
+    lazy: true
+    url: https://captive.apple.com/generate_204
+    disable-udp: false
+    timeout: 2000
+    max-failed-times: 3
+    hidden: true
+    proxies:
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇹🇼 台湾节点
+      - 🇺🇸 美国节点
+  - name: 🎯 全球直连
+    type: select
+    disable-udp: false
+    hidden: true
+    proxies:
+      - DIRECT
+  - name: 📵 拒绝连接
+    type: select
+    disable-udp: true
+    hidden: true
+    proxies:
+      - REJECT
+
+
+###############################   建立锚点   #####################################
+proxy-providers:
+  满鑫欢喜:
+    type: http
+    path: ./profiles/proxies/满鑫欢喜.yaml
+    url: "你机场订阅链接"
+    interval: 43200
+    # filter:       #筛选
+    exclude-filter: "剩余流量|套餐到期|测试|下次重置|官网|Hong.*?A|Singapore.*?A|Japan.*?A|United.*?A|Taiwan.*?A|Traffic|Expire|https|Philippines|ISP|Malaysia|Vietnam|Indonesia"
+    override:
+      #udp: false
+     # ip-version: ipv4
+      additional-prefix: "[ 牧场 ]" #前缀
+      # additional-suffix: "XXXXXXXX"   #后缀
+    health-check:
+      enable: true
+      url: https://captive.apple.com/generate_204
+      interval: 300
+  鑫满意足:
+    type: http
+    path: ./profiles/proxies/鑫满意足.yaml
+    url: "https://pqjc.site/api/v1/client/subscribe?token=ae2fa25c358e4c081cf3e7102f8b4a18"
+    interval: 21600
+    filter: 高速
+    exclude-filter: "剩余流量|套餐到期|下次重置|AWS|官网|倍"
+    override:
+      #udp: false
+      #ip-version: ipv4
+      additional-prefix: "[ 赔钱 ]"
+      # additional-suffix: "XXXXXXXX"   #后缀
+    health-check:
+      enable: true
+      url: https://captive.apple.com/generate_204
+      interval: 300
+  连本带西:
+    type: http
+    path: ./profiles/proxies/连本带西.yaml
+    url: "http://124.71.40.178/api/v1/client/subscribe?token=150f1fbd86fa4756a131117498d229be"
+    interval: 10800
+    #filter: 高速
+    exclude-filter: "剩余流量|套餐到期|下次重置|AWS|官网|倍|需重登账号|节点异常请刷新订阅"
+    override:
+      #udp: false
+      #ip-version: ipv4
+      additional-prefix: "[ 五毛鸡 ]"
+      # additional-suffix: "XXXXXXXX"   #后缀
+    health-check:
+      enable: true
+      url: https://captive.apple.com/generate_204
+      interval: 300
+rules:
+# >屏蔽QUIC
+ - AND,((DST-PORT,443),(NETWORK,UDP)),REJECT-DROP
+  # 常用必备
+ - DST-PORT,123,DIRECT
+ - IP-CIDR,95.161.76.100/31,REJECT-DROP,no-resolve
+  # 防御
+ - RULE-SET,category-public-tracker,REJECT-DROP
+ - DOMAIN-SUFFIX,googleapis.cn,🚀 节点选择
+ - RULE-SET,private_domain,🎯 全球直连
+ - RULE-SET,private_ip,🎯 全球直连,no-resolve
+ - RULE-SET,Wogg,🎯 全球直连
+ - RULE-SET,Speedtest,🛠️ Speedtest测速
+ - RULE-SET,Binance,💱 虚拟货币
+ - DOMAIN-SUFFIX,misty.cx,🎥 奈飞视频
+ - RULE-SET,OpenAI,🤖 OpenAi
+ - RULE-SET,Gemini,🤖 OpenAi
+ - RULE-SET,Telegram,📲 电报消息
+ - RULE-SET,YouTube,📹 油管视频
+ - RULE-SET,Netflix,🎥 奈飞视频
+ - RULE-SET,Disney,🎥 Disney
+ - RULE-SET,Bahamut,📺 巴哈姆特
+ - RULE-SET,Bilibili,📺 哔哩哔哩
+ - RULE-SET,mypikpak,🌍 国际媒体
+ - RULE-SET,Twitter,🌍 国际媒体
+ - RULE-SET,Tiktok,🌍 国际媒体
+ - RULE-SET,Emby,🌍 国际媒体
+ - RULE-SET,Fox,🌍 国际媒体
+ - RULE-SET,VOA,🌍 国际媒体
+ - RULE-SET,BBC,🌍 国际媒体
+ - RULE-SET,Espn,🌍 国际媒体
+ - RULE-SET,DAZN,🌍 国际媒体
+ - RULE-SET,TVB,🌍 国际媒体
+ - RULE-SET,Abema,🌍 国际媒体
+ - RULE-SET,Vimeo,🌍 国际媒体
+ - RULE-SET,UKMedia,🌍 国际媒体
+ - RULE-SET,USMedia,🌍 国际媒体
+ - RULE-SET,Niconico,🌍 国际媒体
+ - RULE-SET,Voxmedia,🌍 国际媒体
+ - RULE-SET,PandoraTV,🌍 国际媒体
+ - RULE-SET,Instagram,🌍 国际媒体
+ - RULE-SET,DiscoveryPlus,🌍 国际媒体
+ - RULE-SET,ParamountPlus,🌍 国际媒体
+ - RULE-SET,Huffpost,🌍 国际媒体
+ - RULE-SET,AppleDaily,🌍 国际媒体
+ - RULE-SET,Dailymotion,🌍 国际媒体
+ - RULE-SET,Gettyimages,🌍 国际媒体
+ - RULE-SET,MyVideo_Replenish,🌍 国际媒体
+ - RULE-SET,Teams,Ⓜ️ 微软服务
+ - RULE-SET,GitHub,Ⓜ️ 微软服务
+ - RULE-SET,OneDrive,Ⓜ️ 微软服务
+ - RULE-SET,Bing,Ⓜ️ 微软服务
+ - RULE-SET,MicrosoftEdge,Ⓜ️ 微软服务
+ - RULE-SET,Microsoft,Ⓜ️ 微软服务
+ - RULE-SET,BanEasyList,🆎 广告拦截
+ - RULE-SET,BanEasyPrivacy,🆎 广告拦截
+ - RULE-SET,Download,🎯 全球直连
+ - RULE-SET,GameDownloadCN,🎯 全球直连
+ - RULE-SET,Game,🎮 游戏平台
+ - RULE-SET,Apple,🍎 苹果服务
+ - RULE-SET,Chinamax,🎯 全球直连
+ - RULE-SET,cn_domain,🎯 全球直连
+ - RULE-SET,Geolocation-!cn,🚀 节点选择
+ - RULE-SET,cn_ip,🎯 全球直连,no-resolve
+ - GEOSITE,CN,🎯 全球直连
+ - GEOIP,CN,🎯 全球直连
+ - DST-PORT,80,🚀 节点选择
+ - DST-PORT,443,🚀 节点选择
+ - MATCH,🐟 漏网之鱼
+rule-providers:
+  ChinaIPv6:
+    <<: *pit
+    url: "https://ispip.clang.cn/all_cn_ipv6.txt"
+    path: ./providers/china_ip6_route.yaml
+  ChinaIPv4:
+    <<: *pit
+    url: "https://ispip.clang.cn/all_cn.txt"
+    path: ./providers/china_ip4_route.yaml
+  Wogg:
+    <<: *pcy
+    url: "http://keket.cn:50542/d/pg_zy/Openclash/Wogg.yaml"
+    path: ./providers/Wogg.yaml
+  BanEasyList:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanEasyList.yaml"
+    path: ./providers/BanEasyList.yaml
+  BanEasyPrivacy:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanEasyPrivacy.yaml"
+    path: ./providers/BanEasyPrivacy.yaml
+  Binance:
+    <<: *pdm
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/binance.mrs"
+    path: ./providers/binance.mrs
+  Speedtest:
+    <<: *pdm
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/speedtest.mrs"
+    path: ./providers/speedtest.mrs
+  mypikpak:
+    <<: *pdm
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pikpak.mrs"
+    path: ./providers/pikpak.mrs
+  category-public-tracker:
+    <<: *pdm
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-public-tracker.mrs"
+    path: ./providers/category-public-tracker.mrs
+  private_domain:
+    <<: *pdy
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/private.yaml"
+    path: ./providers/private.yaml
+  private_ip:
+    <<: *piy
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/private.yaml"
+    path: ./providers/private_ip.mrs
+  OpenAI:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI_No_Resolve.yaml"
+    path: ./providers/OpenAI_No_Resolve.yaml
+  Gemini:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini_No_Resolve.yaml"
+    path: ./providers/Gemini_No_Resolve.yaml
+  Telegram:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram_No_Resolve.yaml"
+    path: ./providers/Telegram_No_Resolve.yaml
+  Tiktok:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok_No_Resolve.yaml"
+    path: ./providers/TikTok_No_Resolve.yaml
+  Twitter:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter_No_Resolve.yaml"
+    path: ./providers/Twitter_No_Resolve.yaml
+  YouTube:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube_No_Resolve.yaml"
+    path: ./providers/YouTube_No_Resolve.yaml
+  Netflix:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix_Classical_No_Resolve.yaml"
+    path: ./providers/Netflix_Classical_No_Resolve.yaml
+  Disney:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Disney/Disney_No_Resolve.yaml"
+    path: ./providers/Disney_No_Resolve.yaml
+  Bahamut:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Bahamut/Bahamut_No_Resolve.yaml"
+    path: ./providers/Bahamut_No_Resolve.yaml
+  Bilibili:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili_No_Resolve.yaml"
+    path: ./providers/BiliBili_No_Resolve.yaml
+  Download:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Download/Download_No_Resolve.yaml"
+    path: ./providers/Download_No_Resolve.yaml
+  GameDownloadCN:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_No_Resolve.yaml"
+    path: ./providers/GameDownloadCN_No_Resolve.yaml
+  Game:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Game/Game_No_Resolve.yaml"
+    path: ./providers/Game_No_Resolve.yaml
+  Microsoft:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft_No_Resolve.yaml"
+    path: ./providers/Microsoft_No_Resolve.yaml
+  Apple:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Apple/Apple_Classical_No_Resolve.yaml"
+    path: ./providers/Apple_Classical_No_Resolve.yaml
+  Chinamax:
+    <<: *pcy
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax.yaml"
+    path: ./providers/ChinaMax.yaml
+  cn_domain:
+    <<: *pdm
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"
+    path: ./providers/cn.mrs
+  cn_ip:
+    <<: *pim
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs"
+    path: ./providers/cn_ip.mrs
+  Geolocation-!cn:
+    <<: *pdm
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"
+    path: ./providers/geolocation-!cn.mrs
+# 🌍 国际媒体
+  Emby:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Emby/Emby.yaml
+  Fox:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Fox/Fox.yaml
+  VOA:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/VOA/VOA.yaml
+  BBC:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BBC/BBC.yaml
+  Espn:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Espn/Espn.yaml
+  DAZN:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DAZN/DAZN.yaml
+  TVB:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TVB/TVB.yaml
+  Abema:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Abema/Abema.yaml
+  Vimeo:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Vimeo/Vimeo.yaml
+  UKMedia:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/UKMedia/UKMedia.yaml
+  USMedia:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/USMedia/USMedia.yaml
+  Niconico:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Niconico/Niconico.yaml
+  Voxmedia:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Voxmedia/Voxmedia.yaml
+  PandoraTV:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PandoraTV/PandoraTV.yaml
+  Instagram:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml
+  DiscoveryPlus:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/DiscoveryPlus/DiscoveryPlus.yaml
+  ParamountPlus:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ParamountPlus/ParamountPlus.yaml
+  Huffpost:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Huffpost/Huffpost.yaml
+  AppleDaily:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleDaily/AppleDaily.yaml
+  Dailymotion:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Dailymotion/Dailymotion.yaml
+  Gettyimages:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gettyimages/Gettyimages.yaml
+  MyVideo_Replenish:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/xiaomingyve1/openclash/main/rule/MyVideo_Replenish.yaml
+# Ⓜ️ 微软服务
+  Teams:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Teams/Teams.yaml
+  GitHub:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+  OneDrive:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+  Bing:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+  MicrosoftEdge:
+    <<: *pcy
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/MicrosoftEdge/MicrosoftEdge.yaml
+# 分流规则 
+rules:
+# >屏蔽QUIC
+  - AND,((DST-PORT,443),(NETWORK,UDP)),REJECT-DROP
+  # 常用必备
+  - DST-PORT,123,DIRECT
+  - IP-CIDR,95.161.76.100/31,REJECT-DROP,no-resolve
+  # 防御
+  - RULE-SET,category-public-tracker,REJECT-DROP
+  - DOMAIN-SUFFIX,googleapis.cn,🚀 节点选择
+  - RULE-SET,private_domain,🎯 全球直连
+  - RULE-SET,private_ip,🎯 全球直连,no-resolve
+  - RULE-SET,Wogg,🎯 全球直连
+  - RULE-SET,Speedtest,🛠️ Speedtest测速
+  - RULE-SET,Binance,💱 虚拟货币
+  - DOMAIN-SUFFIX,misty.cx,🎥 奈飞视频
+  - RULE-SET,OpenAI,🤖 OpenAi
+  - RULE-SET,Gemini,🤖 OpenAi
+  - RULE-SET,Telegram,📲 电报消息
+  - RULE-SET,YouTube,📹 油管视频
+  - RULE-SET,Netflix,🎥 奈飞视频
+  - RULE-SET,Disney,🎥 Disney
+  - RULE-SET,Bahamut,📺 巴哈姆特
+  - RULE-SET,Bilibili,📺 哔哩哔哩
+  - RULE-SET,mypikpak,🌍 国际媒体
+  - RULE-SET,Twitter,🌍 国际媒体
+  - RULE-SET,Tiktok,🌍 国际媒体
+  - RULE-SET,Emby,🌍 国际媒体
+  - RULE-SET,Fox,🌍 国际媒体
+  - RULE-SET,VOA,🌍 国际媒体
+  - RULE-SET,BBC,🌍 国际媒体
+  - RULE-SET,Espn,🌍 国际媒体
+  - RULE-SET,DAZN,🌍 国际媒体
+  - RULE-SET,TVB,🌍 国际媒体
+  - RULE-SET,Abema,🌍 国际媒体
+  - RULE-SET,Vimeo,🌍 国际媒体
+  - RULE-SET,UKMedia,🌍 国际媒体
+  - RULE-SET,USMedia,🌍 国际媒体
+  - RULE-SET,Niconico,🌍 国际媒体
+  - RULE-SET,Voxmedia,🌍 国际媒体
+  - RULE-SET,PandoraTV,🌍 国际媒体
+  - RULE-SET,Instagram,🌍 国际媒体
+  - RULE-SET,DiscoveryPlus,🌍 国际媒体
+  - RULE-SET,ParamountPlus,🌍 国际媒体
+  - RULE-SET,Huffpost,🌍 国际媒体
+  - RULE-SET,AppleDaily,🌍 国际媒体
+  - RULE-SET,Dailymotion,🌍 国际媒体
+  - RULE-SET,Gettyimages,🌍 国际媒体
+  - RULE-SET,MyVideo_Replenish,🌍 国际媒体
+  - RULE-SET,Teams,Ⓜ️ 微软服务
+  - RULE-SET,GitHub,Ⓜ️ 微软服务
+  - RULE-SET,OneDrive,Ⓜ️ 微软服务
+  - RULE-SET,Bing,Ⓜ️ 微软服务
+  - RULE-SET,MicrosoftEdge,Ⓜ️ 微软服务
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,BanEasyList,🆎 广告拦截
+  - RULE-SET,BanEasyPrivacy,🆎 广告拦截
+  - RULE-SET,Download,🎯 全球直连
+  - RULE-SET,GameDownloadCN,🎯 全球直连
+  - RULE-SET,Game,🎮 游戏平台
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,Chinamax,🎯 全球直连
+  - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,Geolocation-!cn,🚀 节点选择
+  - RULE-SET,cn_ip,🎯 全球直连,no-resolve
+  - GEOSITE,CN,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - DST-PORT,80,🚀 节点选择
+  - DST-PORT,443,🚀 节点选择
+  - MATCH,🐟 漏网之鱼
